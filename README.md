@@ -317,7 +317,7 @@ and connections
 
 -------------------------------------------------------
 <a name="publish"></a>
-### mqtt.Client#publish(topic, message, [options], [callback])
+### mqtt.Client#publish(topic, message, [options], [callback], [cbStorePut])
 
 Publish a message to a topic
 
@@ -329,6 +329,8 @@ Publish a message to a topic
   * `dup` mark as duplicate flag, `Boolean`, default `false`
 * `callback` - `function (err)`, fired when the QoS handling completes,
   or at the next tick if QoS 0. An error occurs if client is disconnecting.
+* `cbStorePut` - `function ()`, fired when message is put into `outgoingStore`
+  if QoS is `1` or `2` and clean is `false`.
 
 -------------------------------------------------------
 <a name="subscribe"></a>
